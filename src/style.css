@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  /* background: url(https://ol-queeserva.oss-cn-hangzhou.aliyuncs.com/background-info.jpg) no-repeat;
+background-size: cover;
+overflow: hidden; */
+  background-color: #ffffff;
+}
+
+#app {
+  display: flex;
+  max-width: 100% !important;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: eryatongquti;
+  src: url(./assets/font/erzhuotong.TTF);
+  /* src: url(../fonts/方正华隶.TTF); */
+}
+
+@font-face {
+  font-family: HanYiJiaShuJian;
+  src: url(./assets/font/HanYiJiaShuJian-1.ttf);
+  /* src: url(../fonts/方正华隶.TTF); */
+}
+
+@font-face {
+  font-family: HYETouSongW;
+  src: url(./assets/font/HYETouSongW-2.ttf);
+  /* src: url(../fonts/方正华隶.TTF); */
+}
+
+.toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 999;
+  display: none;
+}
