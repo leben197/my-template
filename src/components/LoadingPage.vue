@@ -28,7 +28,7 @@ const leftDoorTransform = ref('');
 const rightDoorTransform = ref('');
 const leftSemicircleTransform = ref('');
 const rightSemicircleTransform = ref('');
-const loadingTextContent = ref('');
+const loadingTextContent = ref<string>('加载中');
 
 // 使用ref获取半圆元素实例
 const leftSemicircle = ref<HTMLElement | null>(null);

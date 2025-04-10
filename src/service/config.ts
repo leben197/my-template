@@ -1,2 +1,2 @@
-const configUrl = 'https://10th-static.oss-cn-hangzhou.aliyuncs.com/rewards'
-export default configUrl
+const configUrl = "https://config.info.com/";
+export default configUrl;

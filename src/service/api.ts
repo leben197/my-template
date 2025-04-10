@@ -1,7 +1,10 @@
 
 import request from '@/service/index';
 import md5 from "@/utils/md5";
-export function generateSignature(obj: Record<string, any> | null, secret = 'ikkP9w0KfVz1tnvHCin49e6XZUwd94qZ'): { sign: string; timestamp: number } {
+export function generateSignature(
+  obj: Record<string, any> | null,
+  secret = ""
+): { sign: string; timestamp: number } {
   let sortedParams: Record<string, any> = {};
   if (obj) {
     // 先添加 timestamp 属性
@@ -14,14 +17,15 @@ export function generateSignature(obj: Record<string, any> | null, secret = 'ikk
 
     // 按照排序后的键填充sortedParams对象
     for (const key of sortedKeys) {
-      sortedParams[key] = obj[key] === undefined || obj[key] === null ? '' : obj[key];
+      sortedParams[key] =
+        obj[key] === undefined || obj[key] === null ? "" : obj[key];
     }
   } else {
     // 如果obj为空，创建一个包含timestamp的新对象
     sortedParams = { timestamp: Math.floor(Date.now() / 1000) };
   }
 
-  let paramString = '';
+  let paramString = "";
   for (const key in sortedParams) {
     if (Array.isArray(sortedParams[key])) {
       paramString += `${key}=${JSON.stringify(sortedParams[key])}`;
@@ -36,17 +40,18 @@ export function generateSignature(obj: Record<string, any> | null, secret = 'ikk
 
 export const getReport = (param: any = {}) => {
   const { sign, timestamp } = generateSignature(param);
-  return request({ url: `/v1/report2024`, method: 'GET', params: { ...param, sign, timestamp } });
+  return request({
+    url: `/v1/report2024`,
+    method: "GET",
+    params: { ...param, sign, timestamp },
+  });
 };
 
 export const getShare = (param: any = {}) => {
   const { sign, timestamp } = generateSignature(param);
-  return request({ url: `/v1/report2024/share`, method: 'GET', params: { ...param, sign, timestamp } });
-};
-export const getSignatureQuery = (param: any = {}) => {
   return request({
-    baseUrl: 'https://10thwx.sanguosha.com',
-    url: `/wechat/jssdk`,
-    method: 'GET', param
+    url: `/v1/report2024/share`,
+    method: "GET",
+    params: { ...param, sign, timestamp },
   });
-}
+};

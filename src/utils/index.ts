@@ -94,31 +94,3 @@ export function getEnvironment() {
   // }
 
 }
-export function debounce<T extends (...args: any[]) => any>(func: T, delay: number): (...args: Parameters<T>) => void {
-    let timer: ReturnType<typeof setTimeout> | null = null;
-    return function(this: ThisParameterType<T>,...args: Parameters<T>) {
-        if (timer) {
-            clearTimeout(timer);
-        }
-        timer = setTimeout(() => {
-            func.apply(this, args);
-        }, delay);
-    };
-}
-/**
- * 创建一个节流函数
- * @param func 需要节流的函数
- * @param delay 节流的时间间隔，单位为毫秒
- * @returns 节流后的函数
- */
-export function throttle(func: (...args: any[]) => void, delay: number): (...args: any[]) => void {
-    let timer: number | null = null;
-    return function(this: any,...args: any[]): void {
-        if (!timer) {
-            func.apply(this, args);
-            timer = setTimeout(() => {
-                timer = null;
-            }, delay) as any;
-        }
-    };
-}
