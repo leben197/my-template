@@ -19,7 +19,7 @@ const vPreload: Directive = {
 =======
         if (component) {
             const componentWithPreload = component as ComponentWithPreload;
-            const loadPromises: Promise<void>[] = [];
+            let loadPromises: Promise<void>[] = [];
             if (componentWithPreload.preload) {
                 loadPromises.push(componentWithPreload.preload());
             }
