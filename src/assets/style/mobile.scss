@@ -1,0 +1,101 @@
+/* 移动端适配样式 */
+
+/* 响应式断点 */
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+/* 移动端通用样式 */
+@media (max-width: map-get($breakpoints, md)) {
+  /* 表格适配 */
+  .responsive-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    td, th {
+      white-space: nowrap;
+    }
+  }
+
+  /* 表单适配 */
+  .form-layout {
+    .form-item {
+      flex-direction: column;
+
+      .form-label {
+        width: 100%;
+        margin-bottom: 8px;
+        text-align: left;
+      }
+
+      .form-content {
+        width: 100%;
+      }
+    }
+  }
+
+  /* 卡片响应式间距 */
+  .card {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  /* 栅格布局适配 */
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* 按钮组移动适配 */
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+
+    .button {
+      margin-right: 0;
+      margin-bottom: 8px;
+      width: 100%;
+    }
+  }
+
+  /* 对话框适配 */
+  .dialog {
+    width: 90% !important;
+    max-width: none !important;
+  }
+}
+
+/* 移动端隐藏元素 */
+@media (max-width: map-get($breakpoints, md)) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+/* 仅在移动端显示的元素 */
+.visible-xs {
+  @media (min-width: map-get($breakpoints, md)) {
+    display: none !important;
+  }
+}
+
+/* 平板隐藏元素 */
+@media (min-width: map-get($breakpoints, md)) and (max-width: map-get($breakpoints, lg) - 1px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+/* 在桌面端隐藏的元素 */
+@media (min-width: map-get($breakpoints, lg)) {
+  .hidden-lg {
+    display: none !important;
+  }
+}

@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 
-export function useDebounce(fn: () => void, delay = 500) {
+export function usemyDebounce(fn: () => void, delay = 500) {
   let timer: string | number | NodeJS.Timeout | undefined;
 
   const debouncedFn = () => {
@@ -17,7 +17,7 @@ export function useDebounce(fn: () => void, delay = 500) {
 }
 
 // 定义 useThrottle 函数，接收一个回调函数和节流时间间隔（默认为 500ms）
-export function useThrottle<T extends (...args: any[]) => any>(
+export function usemyThrottle<T extends (...args: any[]) => any>(
   callback: T,
   delay: number = 500
 ): (...args: Parameters<T>) => void {

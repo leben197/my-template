@@ -13,8 +13,21 @@ const vPreload: Directive = {
     const options: PreloadOptions = binding.value || {};
     const methodNames = options.methods || ['preload', 'loadResources'];
 
+<<<<<<< HEAD
     // 使用自定义数据属性存储加载状态
     el.dataset.preloading = 'true';
+=======
+        if (component) {
+            const componentWithPreload = component as ComponentWithPreload;
+            const loadPromises: Promise<void>[] = [];
+            if (componentWithPreload.preload) {
+                loadPromises.push(componentWithPreload.preload());
+            }
+            if (componentWithPreload.loadResources) {
+                loadPromises.push(componentWithPreload.loadResources());
+            }
+            // 可以根据实际更多组件的加载方法情况继续添加判断和调用逻辑
+>>>>>>> 77b736a (普通模板)
 
     // 在元素上添加加载状态的CSS类
     el.classList.add('preloading');

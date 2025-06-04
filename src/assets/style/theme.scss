@@ -1,0 +1,47 @@
+:root {
+  // 默认主题 (浅色)
+  --primary-color: #409eff;
+  --success-color: #67c23a;
+  --warning-color: #e6a23c;
+  --error-color: #f56c6c;
+  --info-color: #909399;
+  --bg-base: #fff;
+  --bg-soft: #f5f7fa;
+  --bg-muted: #ebeef5;
+  --text-primary: #303133;
+  --text-secondary: #606266;
+  --text-muted: #909399;
+  --border-color: #dcdfe6;
+}
+
+html.dark {
+  // 深色主题
+  --primary-color: #5c92ff;
+  --success-color: #85ce61;
+  --warning-color: #ebb563;
+  --error-color: #f78989;
+  --info-color: #a6a9ad;
+  --bg-base: #1c1c1c;
+  --bg-soft: #252525;
+  --bg-muted: #313131;
+  --text-primary: #e5e7eb;
+  --text-secondary: #a3a3a3;
+  --text-muted: #8e8e8e;
+  --border-color: #4c4c4c;
+}
+
+html.green {
+  // 自定义绿色主题
+  --primary-color: #10b981;
+  --success-color: #22c55e;
+  --warning-color: #eab308;
+  --error-color: #ef4444;
+  --info-color: #64748b;
+  --bg-base: #fff;
+  --bg-soft: #f0fdf4;
+  --bg-muted: #dcfce7;
+  --text-primary: #064e3b;
+  --text-secondary: #065f46;
+  --text-muted: #047857;
+  --border-color: #d1fae5;
+}

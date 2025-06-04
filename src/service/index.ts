@@ -126,6 +126,7 @@ function requestInterceptor(config: RequestConfig): RequestConfig {
   return config;
 }
 
+<<<<<<< HEAD
 // 创建一个请求管理器
 const requestManager = new Map();
 
@@ -137,6 +138,11 @@ export default function request<T = any>(
   const signal = controller.signal;
 
   // 请求拦截器逻辑保持不变
+=======
+// 创建一个新的 Fetch 请求方法
+export default function request(config: any) {
+  // 创建请求拦截器
+>>>>>>> 77b736a (普通模板)
   if (config.interceptors && config.interceptors.requestInterceptor) {
     config = config.interceptors.requestInterceptor(config);
   } else {
